@@ -30,6 +30,9 @@ jobs:
         run: |
           mkdir _site
           cp -r index.html assets data restoration transcript _site/
+          # semlab.io sits behind Cloudflare, which caches CSS and JS for four hours.
+          # Stamp the commit into those URLs so every deploy is fetched fresh.
+          sed -i -E "s#(assets/site\.css|assets/site\.js|data/latto\.js)\"#\1?v=${GITHUB_SHA::8}\"#g" _site/index.html
 
       - uses: actions/configure-pages@v6
 
