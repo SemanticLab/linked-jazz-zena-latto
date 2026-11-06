@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Zena Latto — sunglasses glint</title>
+  <style>
+    :root{color-scheme:dark;--bg:#191c1b;--ink:#eee8dc;--muted:#aaa99e;--line:#3b403c;--accent:#dfc28c}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 system-ui,-apple-system,sans-serif}header{max-width:1360px;margin:auto;padding:23px 36px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;align-items:center}header a{color:var(--muted);text-decoration:none;font-size:12px}header span{font:24px Georgia,serif}main{max-width:1240px;margin:auto;padding:30px 36px;display:grid;grid-template-columns:minmax(260px,1fr) minmax(300px,1fr);gap:50px;align-items:center}.portrait{height:calc(100vh - 145px);min-height:500px;max-height:930px;display:flex;justify-content:center}.portrait svg{height:100%;width:auto;max-width:100%;overflow:visible}.eyebrow{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.15em}h1{font:clamp(38px,4vw,58px)/1.1 Georgia,serif;font-weight:400;margin:15px 0 20px}p{color:var(--muted);max-width:430px}h1 em{font-weight:400;color:var(--accent)}.detail{margin:28px 0 10px;position:relative;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#222725}.detail svg{width:100%;height:auto;display:block;aspect-ratio:740/410}.detail-label{position:absolute;right:14px;bottom:10px;font-size:10px;letter-spacing:.13em;color:#eee8dc;background:#191c1bdb;padding:3px 7px;border-radius:3px}.toolbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:23px}button{border:1px solid var(--line);border-radius:5px;padding:10px 17px;font:inherit;cursor:pointer;background:transparent;color:var(--ink)}button.primary{color:#191c1b;background:var(--accent);border-color:var(--accent)}button:hover{filter:brightness(1.12)}button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:4px}label{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:12px}input{accent-color:var(--accent)}input[type=range]{width:100%;margin:0;cursor:ew-resize}.timeline{margin-top:23px}.timeline-row{display:flex;justify-content:space-between;color:var(--muted);font-size:11px;letter-spacing:.04em}.description{font-size:12px;border-top:1px solid var(--line);padding-top:20px;margin-top:26px}.sr-only{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0,0,0,0)}.error{color:#ffb2a5}
+    @media(max-width:760px){header{padding:18px 22px}main{padding:24px 22px;grid-template-columns:1fr;gap:26px}.portrait{height:55vh;min-height:340px;grid-row:2}.controls{grid-row:1}h1{font-size:39px}.detail{margin-top:22px}.description{margin-bottom:0}}
+  </style>
+</head>
+<body>
+  <header><span>Zena Latto</span><a href="index.html">← Poster restoration</a></header>
+  <main>
+    <div class="portrait">
+      <svg viewBox="0 0 3072 5412" role="img" aria-label="Zena Latto playing saxophone, with an animated light reflection on her sunglasses">
+        <defs>
+          <clipPath id="lens-mask" clipPathUnits="userSpaceOnUse">
+            <path d="M1779 927 C1799 902 1837 924 1870 946 C1892 961 1915 978 1920 994 C1928 1031 1896 1068 1861 1076 C1837 1084 1815 1072 1802 1049 C1788 1020 1775 976 1776 949 C1776 938 1777 932 1779 927 Z"/>
+            <path d="M1990 1018 C2013 989 2059 984 2107 989 C2138 990 2149 1002 2140 1029 C2130 1066 2106 1099 2070 1113 C2035 1131 2009 1123 1994 1108 C1977 1090 1972 1054 1979 1037 Z"/>
+          </clipPath>
+          <linearGradient id="reflection" x1="0" x2="1" y1="0" y2="0">
+            <stop offset="0" stop-color="#fff" stop-opacity="0"/>
+            <stop offset=".23" stop-color="#fff" stop-opacity=".08"/>
+            <stop offset=".43" stop-color="#fff" stop-opacity=".34"/>
+            <stop offset=".51" stop-color="#fff" stop-opacity=".78"/>
+            <stop offset=".60" stop-color="#fff" stop-opacity=".27"/>
+            <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+          </linearGradient>
+          <radialGradient id="sparkle-glow"><stop offset="0" stop-color="#fff" stop-opacity=".65"/><stop offset=".25" stop-color="#fff" stop-opacity=".22"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+          <g id="latto-art">
+            <image id="latto-photo" href="latto-cutout.png" width="3072" height="5412"/>
+            <g clip-path="url(#lens-mask)">
+              <g id="reflection-beam" opacity="0" transform="translate(1680 1020) rotate(-18)">
+                <rect x="-57" y="-270" width="114" height="540" fill="url(#reflection)"/>
+                <rect x="-4" y="-270" width="5" height="540" fill="#fff" opacity=".22"/>
+              </g>
+            </g>
+            <g id="tip-sparkle" opacity="0" transform="translate(2178 1007) scale(0)">
+              <circle r="60" fill="url(#sparkle-glow)"/>
+              <path d="M0 -43 C3 -10 5 -5 29 0 C5 5 3 10 0 43 C-3 10 -5 5 -29 0 C-5 -5 -3 -10 0 -43Z" fill="white"/>
+              <circle r="3" fill="white"/>
+            </g>
+          </g>
+        </defs>
+        <use href="#latto-art"/>
+      </svg>
+    </div>
+    <section class="controls" aria-label="Sunglasses reflection preview">
+      <div class="eyebrow">A little old-school cool</div>
+      <h1>The sweep.<br>Then the <em>sparkle.</em></h1>
+      <p>A slim reflection catches each lens, then finishes with a quick glint at the tip of the frame.</p>
+      <div class="detail">
+        <svg viewBox="1530 810 740 410" role="img" aria-label="Close-up of the sunglasses reflection"><use href="#latto-art"/></svg>
+        <span class="detail-label">DETAIL VIEW</span>
+      </div>
+      <div class="toolbar">
+        <button class="primary" id="replay" type="button">Replay glint</button>
+        <button id="pause" type="button">Pause</button>
+        <label><input id="loop" type="checkbox" checked> Loop every 5 seconds</label>
+      </div>
+      <div class="timeline">
+        <label class="sr-only" for="time">Scrub through the light effect</label>
+        <input id="time" type="range" min="0" max="2400" value="0" step="1" aria-valuetext="Still">
+        <div class="timeline-row"><span id="phase">Still</span><output id="timestamp" for="time">0.00 s</output></div>
+      </div>
+      <p class="description">The photograph stays untouched. The light follows masks inside the two lenses; a small four-point star blooms at the frame’s outer corner. The sweep lasts 1.1 seconds, followed by a 0.42-second glint.</p>
+      <p><a href="latto-glint.webp" download style="color:var(--accent);text-underline-offset:4px">Download animated WebP</a><br><small>44 KB · 613 × 1080 · transparent · five-second loop</small></p>
+      <p><a href="latto-glint-gold.webp" download style="color:var(--accent);text-underline-offset:4px">Download gold-border WebP</a><br><small>#dfc28c border · 47 KB · same five-second loop</small></p>
+      <noscript><p>Enable JavaScript to play the effect.</p></noscript>
+    </section>
+  </main>
+  <script src="latto-glint.js"></script>
+</body>
+</html>

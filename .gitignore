@@ -1,0 +1,21 @@
+# macOS and editor files
+.DS_Store
+.vscode/
+.idea/
+
+# Local tooling and caches
+.claude/
+__pycache__/
+*.pyc
+.venv/
+node_modules/
+
+# Output of the Pages workflow's assemble step, if run locally
+_site/
+
+# QA renders written by the scripts; not part of the site
+restoration/review-*.jpg
+restoration/*-review.jpg
+
+# Byte-identical copy of restoration/latto-cutout.png, which is the one the page and scripts use
+images/latto_cutout.png

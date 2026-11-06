@@ -1,0 +1,33 @@
+{
+  "method": "Original photographed RGB with alpha masks and Lanczos resampling. No generative lettering or texture.",
+  "assets": {
+    "before": {
+      "source": "../images/flyer-before.jpg",
+      "crop": [
+        0,
+        69,
+        460,
+        593
+      ],
+      "size": [
+        2697,
+        3072
+      ],
+      "scale": 5.862595419847328
+    },
+    "after": {
+      "source": "../images/flyer-after.jpg",
+      "crop": [
+        163,
+        7,
+        469,
+        444
+      ],
+      "size": [
+        2151,
+        3072
+      ],
+      "scale": 7.02974828375286
+    }
+  }
+}
