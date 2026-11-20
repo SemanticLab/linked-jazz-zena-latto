@@ -42,6 +42,7 @@
     [D.links.wikipedia, 'Zena Latto on Wikipedia', 'Written by members of the Semantic Lab. Source here for her birth and death dates and a few others, marked where used.'],
     [D.links.wikidata, 'Zena Latto on Wikidata', `Item ${D.subject.wd}, the identifier that ties her to the people she named.`],
     [D.links.linkedjazz, 'Linked Jazz', 'The research project on relationships among jazz musicians that conducted the interview.'],
+    [D.links.album, 'Her photo album in the Semantic Lab wikibase', 'The album of the Lionel Hampton Orchestra, 1945–1948: each page, photograph and caption as a linked record.'],
     [D.links.semlab, 'Semantic Lab at Pratt', 'The lab that holds and digitized Zena’s archive.'],
   ].map(([href, title, text]) => `<li><a href="${esc(href)}">${esc(title)}</a><p>${esc(text)}</p></li>`).join('');
 

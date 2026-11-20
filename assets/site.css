@@ -248,3 +248,85 @@ p { margin: 0 0 1em; }
   html { scroll-behavior: auto; }
   * { transition: none !important; }
 }
+
+/* Photo album (assets/album.js; data read live from the Semantic Lab wikibase) */
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+#album-app { min-height: 320px; }
+.album-status { color: var(--muted); padding: 40px 0; }
+.album-status button, .album-clear, .pager button, .pager select, .chip, .chip-more, .lightbox-bar button, .lightbox-toggle, .field input, .field select {
+  font: inherit; color: var(--ink); background: var(--panel); border: 1px solid var(--line); border-radius: 6px; }
+.album-status button, .album-clear, .pager button, .chip, .chip-more, .lightbox-bar button, .lightbox-toggle { cursor: pointer; }
+.album-status button:hover, .album-clear:hover, .pager button:hover:not(:disabled), .chip:hover, .chip-more:hover, .lightbox-bar button:hover:not(:disabled), .lightbox-toggle:hover { border-color: var(--accent); color: var(--accent); }
+button:disabled { opacity: .35; cursor: default; }
+
+.album-controls { display: grid; grid-template-columns: minmax(0, 1fr) 230px 150px; gap: 16px; margin-bottom: 18px; }
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field span { font-size: 11px; letter-spacing: .13em; text-transform: uppercase; color: var(--muted); }
+.field input, .field select { height: 42px; padding: 0 12px; font-size: 15px; width: 100%; }
+.field input::placeholder { color: var(--faint); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 36px; }
+.chip, .chip-more { padding: 5px 12px; font-size: 13px; border-radius: 999px; }
+.chip b { font-weight: 400; color: var(--faint); margin-left: 2px; }
+.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+.chip[aria-pressed="true"] b { color: var(--bg); }
+.chip.extra { display: none; }
+.chips.all .chip.extra { display: inline-block; }
+.chip-more { background: none; color: var(--muted); }
+
+.album-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; padding-top: 22px; border-top: 1px solid var(--line); margin-bottom: 22px; }
+.album-head h3 { font-size: 26px; margin: 0 0 10px; }
+.album-writing { font: italic 17px/1.5 var(--serif); color: var(--muted); margin: 0; max-width: 44em; }
+.album-writing span { display: block; font: normal 11px var(--sans); letter-spacing: .13em; text-transform: uppercase; color: var(--faint); margin-bottom: 2px; }
+.album-clear { padding: 7px 14px; font-size: 13px; flex: none; }
+.album-head { align-items: center; }
+.album-head h3 { margin: 0; }
+.album-tools { display: flex; align-items: center; gap: 12px; flex: none; }
+.pager { display: flex; align-items: center; gap: 8px; flex: none; }
+.pager span { font: 14px var(--sans); color: var(--muted); min-width: 7.5em; text-align: center; font-variant-numeric: tabular-nums; }
+.album-foot { display: flex; justify-content: center; margin-top: 28px; }
+.pager button { width: 42px; height: 42px; font-size: 18px; }
+.pager select { height: 42px; padding: 0 10px; font-size: 14px; }
+.album-empty { color: var(--muted); padding: 30px 0; }
+
+.shots { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 20px; }
+.shot { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; }
+.shot-open { all: unset; display: block; cursor: zoom-in; background: var(--video-bg); }
+.shot-open:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+.shot-open img { width: 100%; height: 230px; object-fit: contain; transition: opacity .15s; }
+.shot-open:hover img { opacity: .85; }
+.shot-text { padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+.shot-caption { font: italic 16px/1.4 var(--serif); margin: 0; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+.shot-caption.none, .lightbox-caption.none { color: var(--faint); font-style: normal; font-family: var(--sans); font-size: 14px; }
+.shot-names { font-size: 13px; color: var(--accent); margin: 0; }
+.shot-meta { font-size: 12px; color: var(--faint); margin: auto 0 0; }
+.album-note { margin-top: 36px; max-width: 62em; }
+
+.lightbox { width: min(1120px, calc(100vw - 32px)); max-height: calc(100vh - 32px); padding: 0; border: 1px solid var(--line); border-radius: 10px; background: var(--bg); color: var(--ink); overflow: auto; }
+.lightbox::backdrop { background: #0b0d0ccc; }
+.lightbox-bar { position: sticky; top: 0; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 12px 18px; background: var(--bg); border-bottom: 1px solid var(--line); z-index: 1; }
+.lightbox-bar p { margin: 0; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.lightbox-bar div { display: flex; gap: 8px; }
+.lightbox-bar button { height: 36px; min-width: 40px; padding: 0 12px; font-size: 14px; }
+.lightbox-body { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 32px; padding: 24px; align-items: start; }
+.lightbox figure { margin: 0; background: var(--video-bg); border-radius: 6px; display: flex; justify-content: center; }
+.lightbox figure img { max-height: calc(100vh - 150px); width: auto; max-width: 100%; }
+.lightbox-toggle { display: block; margin: 12px auto 0; height: 36px; padding: 0 14px; font-size: 14px; }
+.lightbox-caption { font: italic 22px/1.4 var(--serif); margin: 0 0 22px; }
+.lightbox dl { margin: 0; font-size: 14.5px; }
+.lightbox dt { font-size: 11px; letter-spacing: .13em; text-transform: uppercase; color: var(--muted); padding-top: 12px; border-top: 1px solid var(--line); }
+.lightbox dd { margin: 4px 0 14px; color: var(--ink); }
+.lightbox dd ul { list-style: none; margin: 0; padding: 0; }
+.lightbox dd li { padding: 2px 0; }
+.lightbox small { color: var(--faint); font-size: 12px; }
+.lightbox-links { font-size: 13px; color: var(--muted); margin: 8px 0 0; padding-top: 14px; border-top: 1px solid var(--line); }
+
+@media (max-width: 760px) {
+  .album-controls { grid-template-columns: 1fr 1fr; }
+  .field-search { grid-column: 1 / -1; }
+  .album-head { flex-direction: column; align-items: flex-start; gap: 14px; }
+  .shots { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
+  .shot-open img { height: 160px; }
+  .lightbox-body { grid-template-columns: 1fr; gap: 20px; padding: 16px; }
+  .lightbox figure img { max-height: 60vh; }
+}

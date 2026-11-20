@@ -22,6 +22,7 @@
       <a href="#circle">Her circle</a>
       <a href="#life">Her life</a>
       <a href="#words">Her words</a>
+      <a href="#album">Her album</a>
       <a href="#sources">Sources</a>
     </nav>
   </header>
@@ -150,7 +151,19 @@
       </div>
     </section>
 
-    <section id="sources">
+    <section id="album">
+      <div class="wrap">
+        <p class="eyebrow">1945–1948 · Semantic Lab wikibase</p>
+        <h2>Her album of the Lionel Hampton Orchestra</h2>
+        <p class="section-lead">Zena kept a photo album of the Hampton band at the Strand, the Apollo and the Golden Gate Ballroom, with the players’ wives and friends, and captioned each snapshot by hand. <span id="album-count"></span></p>
+
+        <div id="album-app"></div>
+
+        <p class="note album-note">The photographs, captions and names are read live from the <a href="https://base.semlab.io/wiki/Item:Q40390">Semantic Lab wikibase</a>. Captions are transcribed as she wrote them, spelling included, and [?] marks an unsure reading. A name is linked to a person only where her captions identify them; nobody is identified from a face. The album does not say who took the pictures, and they are attributed to Zena.</p>
+      </div>
+    </section>
+
+    <section id="sources" class="band">
       <div class="wrap">
         <h2>Sources</h2>
         <ul class="sources" id="source-list"></ul>
@@ -163,8 +176,9 @@
     <span>Zena Latto Project · Semantic Lab at Pratt</span>
   </footer>
 
-  <noscript><p class="noscript">The charts on this page need JavaScript. The interview transcript is in the transcript folder.</p></noscript>
+  <noscript><p class="noscript">The charts and the photo album on this page need JavaScript. The interview transcript is in the transcript folder.</p></noscript>
   <script src="data/latto.js"></script>
   <script src="assets/site.js"></script>
+  <script src="assets/album.js"></script>
 </body>
 </html>

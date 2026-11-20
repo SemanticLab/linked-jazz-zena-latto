@@ -26,6 +26,7 @@ window.LATTO = {
     wikidata: 'https://www.wikidata.org/wiki/Q20065094',
     linkedjazz: 'https://linkedjazz.org/',
     semlab: 'https://semlab.io/',
+    album: 'https://base.semlab.io/wiki/Item:Q40390',
   },
 
   // How the record was recovered, 2014–2016.
